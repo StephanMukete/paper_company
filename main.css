@@ -1,0 +1,16 @@
+body{
+  font-family: sans-serif;
+}
+ul {
+  display: flex;
+  margin-left: 50%;
+}
+li{
+
+  list-style-type: none;
+  text-decoration: none;
+}
+a{
+  text-decoration: none;
+  padding: 5%;
+}
