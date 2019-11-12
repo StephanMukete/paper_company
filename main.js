@@ -3,8 +3,8 @@ window.addEventListener("load", () => {
  document.querySelector("body").classList.add("loaded");
 });
 var slides = document.querySelectorAll('#slides .slide');
-var currentSlide = 1;
-var slideInterval = setInterval(nextSlide,4000);
+var currentSlide = 0;
+var slideInterval = setInterval(nextSlide,3000);
 
 
 function nextSlide(){
@@ -15,7 +15,7 @@ function nextSlide(){
 
 var aDSlides = document.querySelectorAll('#advertBody .slide');
 var current = 0;
-var adSlideInterval = setInterval(nextAdSlide,3000);
+var adSlideInterval = setInterval(nextAdSlide,2000);
 
 
 function nextAdSlide(){

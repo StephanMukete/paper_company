@@ -1,14 +1,16 @@
-
-@import url("https://fonts.googleapis.com/css?family=Dosis:400,700");
-body{
-  font-family: sans-serif;
+:root {
+  --main-white-color: #f2f2f2;
+  --main-black-color: black;
+  /* --main-purple-color: black; */
 }
-* {box-sizing: border-box}
+@import url("https://fonts.googleapis.com/css?family=Dosis:400,700");
+
 body {font-family: Verdana, sans-serif; margin:0}
 .mySlides {display: none}
 .mySlides img{
-  width: 1000px;
-height: 400px;}
+  width: 000px;
+height: 400px;
+}
 img {
   animation-name: slideFromLeft2;
   animation-duration: 2s;
@@ -74,12 +76,7 @@ img {
 }
 
 
-/* .team
-{
-  display: grid;
-  grid-template: auto / repeat(4, 24%);
-} */
-.team img{
+#team img{
   width: 100%;
   padding: 2%;
   height: 300px;
@@ -87,7 +84,6 @@ img {
 }
 .card{
   box-shadow:3px 3px 5px 6px #ccc;
-  /* border: solid grey 1px; */
   border-radius: 10%;
   margin: 5%;
   padding-bottom: 5%;
@@ -118,7 +114,7 @@ img {
   padding: 2%;
   box-shadow:3px 3px 5px 6px #ccc;
 }
-.sports{
+#sports{
   text-align: center;
   animation-name: slideFromDown;
   margin: 10% 5%;
@@ -167,10 +163,6 @@ img {
 	opacity: 0;
 	z-index: 1;
 
-	-webkit-transition: opacity 1s;
-	-moz-transition: opacity 1s;
-	-o-transition: opacity 1s;
-	transition: opacity 1s;
 }
 
 .showing{
@@ -193,11 +185,7 @@ img {
 
 }
 
-:root {
-  --main-white-color: #f2f2f2;
-  --main-black-color: black;
-  --main-purple-color: black;
-}
+
 
 * {
   padding: 0;
@@ -223,9 +211,6 @@ a {
 body {
   font: 16px/1.5 "Dosis", sans-serif;
   background: var(--main-white-color);
-  /*IE FIX*/
-  /*display: flex;
-  flex-direction: column;*/
 }
 
 /* CONTAINER
@@ -308,12 +293,6 @@ margin-top: 10%;
   animation-name: slideFromLeft;
 animation-duration: 10s;
 }
-/* .centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-} */
 .grid{
   display: flex;
   height: 450px;
@@ -375,40 +354,6 @@ h1.display-2{
   margin-right: 20px;
 }
 
-
-/* MQ
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-@media screen and (min-width: 550px) {
-  .page-header ul {
-    width: auto;
-    margin-top: 0;
-  }
-
-  .page-header .cta-contact {
-    order: 1;
-  }
-
-  .page-footer {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .page-footer ul {
-    margin-bottom: 0;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  body {
-    font-size: 18px;
-  }
-
-  .page-main {
-    padding-left: 90px;
-  }
-}
-
 /* ANIMATIONS
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .page-header nav > *,
@@ -442,8 +387,7 @@ h1.display-2{
   left: 0;
   width: 100%;
   height: 2px;
-  background: var(--main-purple-color);
-  /* background: url('paper1.jpeg') */
+  background: var(--main-black-color);
   z-index: 99999;
   transform: scaleX(0);
 }
@@ -468,8 +412,7 @@ h1.display-2{
   animation: fadeIn 1s ease-in 0.7s forwards;
 }
 
-.loaded .page-header nav > *,
-.loaded .page-footer > * {
+.loaded .page-header nav > * {
   animation: fadeIn 1s ease-in 0.7s forwards, slideIn 0.8s ease-in 0.9s forwards;
 }
 
@@ -482,13 +425,8 @@ h1.display-2{
   grid-template: auto / 15% 65% 15%;
   grid-gap: 2%;
 }
-/* .team img {
 
-  margin-left: 10%;
-  width: 90%;
-
-} */
-.team {
+#team {
 text-align:  center;
   display: grid;
   grid-template: auto / repeat(4, 25%);
