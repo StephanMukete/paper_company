@@ -1,37 +1,544 @@
+
+@import url("https://fonts.googleapis.com/css?family=Dosis:400,700");
 body{
   font-family: sans-serif;
 }
-ul {
-  display: flex;
-  margin-left: 50%;
-}
-li{
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+.mySlides img{
+  width: 1000px;
+height: 400px;}
+img {
+  animation-name: slideFromLeft2;
+  animation-duration: 2s;
+  vertical-align: middle;}
 
-  list-style-type: none;
-  text-decoration: none;
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
 }
-a{
-  text-decoration: none;
-  padding: 5%;
-}
-.header_img img{
+.slideshow-container img{
   width: 100%;
-  height: 70vh;
+
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+
+  transition: ;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+
+/* .team
+{
+  display: grid;
+  grid-template: auto / repeat(4, 24%);
+} */
+.team img{
+  width: 100%;
+  padding: 2%;
+  height: 300px;
+  border-radius: 10%;
+}
+.card{
+  box-shadow:3px 3px 5px 6px #ccc;
+  /* border: solid grey 1px; */
+  border-radius: 10%;
+  margin: 5%;
+  padding-bottom: 5%;
+}
+.card:hover{
+  border: solid grey 1px;
+  margin: 4%;
+  padding: 8%;
+  background: #4169E1;
+  color: white;
+}
+.card-body{
+  text-align: center;
+  transform: rotateY(-120);
+}
+.advert{
+  text-align: center;
+  color: #1E90FF;
+  padding-top: 30%;
+}
+.advert h2{
+  padding: 10% ;
+}
+.main-body{
+  animation-name: slideFromDown;
+  animation-duration: 5s;
+  transition: 0.6s ease;
+  padding: 2%;
+  box-shadow:3px 3px 5px 6px #ccc;
+}
+.sports{
+  text-align: center;
+  animation-name: slideFromDown;
+  margin: 10% 5%;
+  animation-duration: 5s;
+  padding: 2%;
+  box-shadow:3px 3px 5px 6px #ccc;
+}
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+#slides{
+	position: relative;
+	height: 10px;
+	padding: 0px;
+	margin: 0px;
+	list-style-type: none;
+}
+#advertBody{
+  position: relative;
+	height: 10px;
+	padding: 0px;
+	margin: 0px;
+	list-style-type: none;
+
+}
+.grid1 p:nth-child(3) {
+  margin-top: 32%;
+}
+
+
+
+.slide{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	z-index: 1;
+
+	-webkit-transition: opacity 1s;
+	-moz-transition: opacity 1s;
+	-o-transition: opacity 1s;
+	transition: opacity 1s;
+}
+
+.showing{
+	opacity: 1;
+	z-index: 2;
+}
+.show{
+	opacity: 1;
+	z-index: 2;
+}
+
+.advert img{
+  height: 300px;
+}
+.advert-body img{
+  width: 90%;
+  height: 300px;
+  padding: 5%;
+  padding-left: 15%;
+
+}
+
+:root {
+  --main-white-color: #f2f2f2;
+  --main-black-color: black;
+  --main-purple-color: black;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font: 16px/1.5 "Dosis", sans-serif;
+  background: var(--main-white-color);
+  /*IE FIX*/
+  /*display: flex;
+  flex-direction: column;*/
+}
+
+/* CONTAINER
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.wrapper > * {
+  padding: 20px;
+}
+
+
+/* HEADER
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-header {
+  background: var(--main-white-color);
+}
+.page-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-header ul {
+  display: flex;
+  order: 1;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.page-header ul li:not(:last-child) {
+  padding-right: 15px;
+}
+
+.page-header .cta-contact {
+  font-family: inherit;
+  font-size: 1.2rem;
+  padding: 5px 18px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+
+/* MAIN
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  min-height: 350px;
+  /* background: var(--main-purple-color) */
+  background: url('https://media4.manhattan-institute.org/sites/as/files/New%20York%20City.banner_0.png')  no-repeat
+    center / cover;
+  background-blend-mode: luminosity;
+  color: black;
+}
+
+.page-main div {
+  max-width: 500px;
+}
+
+.page-main h1 {
+  margin-bottom: 20px;
+}
+
+.page-main p + p {
+  margin-top: 10px;
+}
+.img img{
+margin-left: 270%;
+margin-top: 10%;
+  height: 350px;
+  border-radius: 20%;
+  width: 80%;
+  animation-name: slideFromLeft;
+animation-duration: 10s;
+}
+/* .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+.grid{
+  display: flex;
+  height: 450px;
+}
+
+/* FOOTER
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+footer{
+    background-color: #3f3f3f;
+    color: #d5d5d5;
+    padding-top: 2rem;
+    text-align: center;
+    /* font-size: 25px; */
+}
+.footer-grid{
+  display: grid;
+  padding-bottom: 2rem;
+  grid-template: auto / repeat(3, 33%);
+}
+hr.light{
+  border-top: 1px solid #d5d5d5;
+  width: 85%;
+  margin-left: 10%;
+  margin-top: .8rem;
+  margin-bottom: 1rem;
+}
+footer a {
+  color: #d5d5d5;
+}
+footer li{
+  padding: 2%;
+}
+footer p{
+  padding: 2%;
+}
+hr.light-100{
+  border-top: 1px solid #d5d5d5;
+  width: 100%;
+  margin-top: .8rem;
+  margin-bottom: 1rem;
+}
+
+h1.display-2{
+  font-size: 4rem
+}
+.page-footer {
+  display: flex;
+  flex-direction: column-reverse;
+  background: var(--main-white-color);
+}
+
+.page-footer ul {
+  display: flex;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.page-footer ul li:not(:last-child) {
+  margin-right: 20px;
+}
+
+
+/* MQ
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media screen and (min-width: 550px) {
+  .page-header ul {
+    width: auto;
+    margin-top: 0;
+  }
+
+  .page-header .cta-contact {
+    order: 1;
+  }
+
+  .page-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .page-footer ul {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+
+  .page-main {
+    padding-left: 90px;
+  }
+}
+
+/* ANIMATIONS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-header nav > *,
+.page-main,
+.page-footer > * {
+  opacity: 0;
+}
+
+.page-header,
+.page-footer,
+.page-main .text-wrapper {
+  overflow: hidden;
+}
+
+.page-header nav > * {
+  transform: translateY(-30px);
+}
+
+.page-footer > * {
+  transform: translateY(30px);
+}
+
+.page-header {
+  position: relative;
+}
+
+.page-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--main-purple-color);
+  /* background: url('paper1.jpeg') */
+  z-index: 99999;
+  transform: scaleX(0);
+}
+
+.page-main .text-wrapper + .text-wrapper {
+  margin-top: 10px;
+}
+
+.page-main .text-wrapper * {
+  transform: translateY(120%);
+}
+
+.page-main .p-wrapper * {
+  transform: translateY(-120%);
+}
+
+.loaded .page-header::after {
+  animation: scaleIn 1.3s ease-in 0.2s forwards;
+}
+
+.loaded .page-main {
+  animation: fadeIn 1s ease-in 0.7s forwards;
+}
+
+.loaded .page-header nav > *,
+.loaded .page-footer > * {
+  animation: fadeIn 1s ease-in 0.7s forwards, slideIn 0.8s ease-in 0.9s forwards;
+}
+
+.loaded .page-main .text-wrapper * {
+  animation: slideIn 0.6s cubic-bezier(0.54, 0.46, 0.54, 0.94) 2s forwards;
 }
 .grid1{
   display: grid;
-  /* grid-template: auto / repeat(3, 32%); */
+   grid-template: auto / repeat(3, 32%);
   grid-template: auto / 15% 65% 15%;
   grid-gap: 2%;
 }
-.grid2 img {
+/* .team img {
 
   margin-left: 10%;
   width: 90%;
 
-}
-.grid2 {
+} */
+.team {
 text-align:  center;
   display: grid;
-  grid-template: auto / repeat(4, 24%);
+  grid-template: auto / repeat(4, 25%);
+}
+@keyframes  slideFromLeft {
+  from {
+    position: relative;
+    left: -280%;
+  }
+  to {
+    left: 280%;
+  }
+}
+@keyframes  slideFromLeft2 {
+  from {
+    position: relative;
+    left: -10%;
+  }
+  to {
+    left: 10%;
+  }
+}
+@keyframes  slideFromDown {
+  from {
+    position: relative;
+    bottom: -10%;
+  }
+  to {
+    bottom: 10%;
+  }
+}
+
+@keyframes fadeIn {
+  60% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes slideIn {
+  100% {
+    transform: translateY(0);
+  }
 }
