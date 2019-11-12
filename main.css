@@ -1,7 +1,6 @@
 :root {
   --main-white-color: #f2f2f2;
   --main-black-color: black;
-  /* --main-purple-color: black; */
 }
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,700");
 
@@ -293,9 +292,22 @@ margin-top: 10%;
   animation-name: slideFromLeft;
 animation-duration: 10s;
 }
+.grid1{
+  display: grid;
+   grid-template: auto / repeat(3, 32%);
+  grid-template: auto / 15% 65% 15%;
+  grid-gap: 2%;
+}
 .grid{
   display: flex;
   height: 450px;
+}
+
+
+#team {
+text-align:  center;
+  display: grid;
+  grid-template: auto / repeat(4, 25%);
 }
 
 /* FOOTER
@@ -419,18 +431,7 @@ h1.display-2{
 .loaded .page-main .text-wrapper * {
   animation: slideIn 0.6s cubic-bezier(0.54, 0.46, 0.54, 0.94) 2s forwards;
 }
-.grid1{
-  display: grid;
-   grid-template: auto / repeat(3, 32%);
-  grid-template: auto / 15% 65% 15%;
-  grid-gap: 2%;
-}
 
-#team {
-text-align:  center;
-  display: grid;
-  grid-template: auto / repeat(4, 25%);
-}
 @keyframes  slideFromLeft {
   from {
     position: relative;
